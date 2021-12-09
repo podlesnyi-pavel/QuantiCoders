@@ -1,0 +1,130 @@
+$color-main: #363b5d;
+$color-white: #fff;
+$color-gray: #f3f7fa;
+$color-gray-text: #b7bbc1;
+
+$border-radius: 5px;
+// $width-part-form: 350px;
+
+$transition-duration: 0.3s;
+
+.form {
+  &__inner {
+    padding: 30px 40px;
+    background-color: #fff;
+  }
+
+  &__title {
+    margin: 0;
+
+    &--mt-40 {
+      margin: 40px 0 0;
+    }
+  }
+
+  &__wrap-btn {
+    margin: 14px auto 0;
+    text-align: center;
+  }
+
+  &__btn-person {
+    min-width: 90px;
+    padding: 7px 15px;
+    border: 2px solid $color-main;
+    background-color: $color-white;
+    font-weight: 500;
+    color: $color-main;
+    transition: background-color $transition-duration;
+
+    &--left {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+
+    &--right {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+
+    &--active {
+      background-color: $color-main;
+      color: $color-white;
+    }
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 38px;
+    padding: 0 40px;
+    font-size: 12px;
+    color: $color-gray-text;
+  }
+
+  &__first-part {
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+    // width: $width-part-form;
+  }
+
+  &__second-part {
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+    // width: $width-part-form;
+  }
+
+  &__item-wrap {
+    display: flex;
+    gap: 0 15px;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    padding: 9px 15px;
+    border: none;
+    border-radius: $border-radius;
+    background-color: $color-gray;
+
+    &--sm {
+      width: 50%;
+    }
+  }
+
+  &__subtitle {
+    margin: 7px 0 0;
+    text-align: center;
+  }
+
+  &__submit {
+    display: block;
+    min-width: 230px;
+    margin: 30px auto 0;
+    padding: 12px 15px;
+    border: none;
+    border-radius: $border-radius;
+    background: rgb(229,54,86);
+    background: linear-gradient(90deg, rgba(229,54,86,1) 0%, rgba(152,99,162,1) 85%);
+    box-shadow: 0 0 15px rgba(229,54,86,1);
+    font-weight: 900;
+    color: $color-white;
+  }
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.title {
+  font-size: 46px;
+  font-weight: 900;
+  text-align: center;
+  color: $color-main;
+}

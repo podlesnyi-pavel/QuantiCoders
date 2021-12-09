@@ -1,9 +1,9 @@
-import { Template } from './components/Template';
+import { Form } from './components/Form';
+import './app.scss';
 
 const App: React.FC = () => (
   <div className="App">
-    <h1>default</h1>
-    <Template />
+    <Form />
   </div>
 );
 
