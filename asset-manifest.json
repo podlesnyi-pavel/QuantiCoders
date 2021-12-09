@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/QuantiCoders%20/static/css/main.c4418837.chunk.css",
-    "main.js": "/QuantiCoders%20/static/js/main.a7104e6f.chunk.js",
-    "main.js.map": "/QuantiCoders%20/static/js/main.a7104e6f.chunk.js.map",
-    "runtime-main.js": "/QuantiCoders%20/static/js/runtime-main.49d84685.js",
-    "runtime-main.js.map": "/QuantiCoders%20/static/js/runtime-main.49d84685.js.map",
-    "static/js/2.610a8442.chunk.js": "/QuantiCoders%20/static/js/2.610a8442.chunk.js",
-    "static/js/2.610a8442.chunk.js.map": "/QuantiCoders%20/static/js/2.610a8442.chunk.js.map",
-    "index.html": "/QuantiCoders%20/index.html",
-    "static/css/main.c4418837.chunk.css.map": "/QuantiCoders%20/static/css/main.c4418837.chunk.css.map",
-    "static/js/2.610a8442.chunk.js.LICENSE.txt": "/QuantiCoders%20/static/js/2.610a8442.chunk.js.LICENSE.txt"
+    "main.css": "/QuantiCoders/static/css/main.c4418837.chunk.css",
+    "main.js": "/QuantiCoders/static/js/main.a7104e6f.chunk.js",
+    "main.js.map": "/QuantiCoders/static/js/main.a7104e6f.chunk.js.map",
+    "runtime-main.js": "/QuantiCoders/static/js/runtime-main.b025824b.js",
+    "runtime-main.js.map": "/QuantiCoders/static/js/runtime-main.b025824b.js.map",
+    "static/js/2.610a8442.chunk.js": "/QuantiCoders/static/js/2.610a8442.chunk.js",
+    "static/js/2.610a8442.chunk.js.map": "/QuantiCoders/static/js/2.610a8442.chunk.js.map",
+    "index.html": "/QuantiCoders/index.html",
+    "static/css/main.c4418837.chunk.css.map": "/QuantiCoders/static/css/main.c4418837.chunk.css.map",
+    "static/js/2.610a8442.chunk.js.LICENSE.txt": "/QuantiCoders/static/js/2.610a8442.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.49d84685.js",
+    "static/js/runtime-main.b025824b.js",
     "static/js/2.610a8442.chunk.js",
     "static/css/main.c4418837.chunk.css",
     "static/js/main.a7104e6f.chunk.js"
