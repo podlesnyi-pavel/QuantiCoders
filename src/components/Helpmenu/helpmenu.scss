@@ -2,6 +2,7 @@
 
 .help-menu {
   margin-top: 32px;
+  padding: 0 0 0 75px;
 
   &__kind-help {
     display: flex;
@@ -61,13 +62,85 @@
   &__payment {
     display: flex;
     justify-content: space-between;
-    margin-top: 22px;
-    padding: 15px;
+    margin-top: 17px;
+    padding: 12px;
     border: 1px solid $color-white-blue;
     border-radius: $border-radius;
+    color: $color-gray-text;
   }
 
-  // &__method-payment {
+  &__payment-methods {
+    flex-basis: 50%;
+  }
 
-  // }
+  &__payment-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 4px;
+  }
+
+  &__text {
+    font-size: 12px;
+  }
+
+  &__payment-btn {
+    width: 130px;
+    height: 68px;
+    padding: 8px 5px;
+    border: none;
+    border-radius: $border-radius--bg;
+    background-color: $color-white-blue;
+    font-size: 11px;
+    font-weight: 300;
+    text-align: center;
+    color: $color-white;
+    transition: background-color $transition-duration;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $bgc-purple;
+    }
+  }
+
+  &__payment-wrap-img {
+    display: flex;
+  }
+
+  &__payment-img {
+    width: 50px;
+    height: 20px;
+    fill: $color-white;
+
+    &--height--30 {
+      height: 30px;
+    }
+
+    &--wm {
+      width: 75px;
+    }
+  }
+
+  &__payment-descr {
+    margin-top: 15px;
+
+    &--big {
+      margin-top: 0;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    &--m--sm {
+      margin-top: 5px;
+    }
+  }
+
+  &__card-info-card {
+    width: 320px;
+    height: 150px;
+    border-radius: $border-radius--bg;
+    background-color: $color-white-blue;
+  }
 }
