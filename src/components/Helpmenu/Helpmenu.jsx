@@ -156,15 +156,45 @@ export const Helpmenu = () => (
 
     <div className="help-menu__payment">
       <div className="help-menu__payment-method">
-        <div className="help-menu__payment-text">
-          Спосiб оплати
-        </div>
         <div className="help-menu__payment-btns">
-          <button className="help-menu__payment-btn"></button>
-          <button className="help-menu__payment-btn"></button>
-          <button className="help-menu__payment-btn"></button>
-          <button className="help-menu__payment-btn"></button>
-          <button className="help-menu__payment-btn"></button>
+          <div className="help-menu__payment-text">
+            Спосiб оплати
+          </div>
+          <button className="help-menu__payment-btn">
+            <img
+              className="help-menu__payment-img"
+              src=""
+              alt=""
+            />
+          </button>
+          <button className="help-menu__payment-btn">
+            <img
+              className="help-menu__payment-img"
+              src=""
+              alt=""
+            />
+          </button>
+          <button className="help-menu__payment-btn">
+            <img
+              className="help-menu__payment-img"
+              src=""
+              alt=""
+            />
+          </button>
+          <button className="help-menu__payment-btn">
+            <img
+              className="help-menu__payment-img"
+              src=""
+              alt=""
+            />
+          </button>
+          <button className="help-menu__payment-btn">
+            <img
+              className="help-menu__payment-img"
+              src=""
+              alt=""
+            />
+          </button>
         </div>
       </div>
 
