@@ -2,6 +2,7 @@ $color-main: #363b5d;
 $color-white: #fff;
 $color-gray: #f3f7fa;
 $color-gray-text: #b7bbc1;
+$bgc-hover: #9297b4;
 
 $border-radius: 5px;
 // $width-part-form: 350px;
@@ -35,6 +36,14 @@ $transition-duration: 0.3s;
     font-weight: 500;
     color: $color-main;
     transition: background-color $transition-duration;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $bgc-hover;
+      color: $color-white;
+      box-shadow: none;
+    }
 
     &--left {
       border-top-left-radius: $border-radius;
@@ -108,11 +117,18 @@ $transition-duration: 0.3s;
     padding: 12px 15px;
     border: none;
     border-radius: $border-radius;
-    background: rgb(229,54,86);
     background: linear-gradient(90deg, rgba(229,54,86,1) 0%, rgba(152,99,162,1) 85%);
     box-shadow: 0 0 15px rgba(229,54,86,1);
     font-weight: 900;
     color: $color-white;
+    transition-property: box-shadow background-color;transition-duration:  $transition-duration;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: linear-gradient(90deg, $bgc-hover 0%, $bgc-hover 85%);
+      box-shadow: 0 0 5px $bgc-hover;
+    }
   }
 }
 
