@@ -1,6 +1,11 @@
 @import '../../variables.scss';
+@import '../../styles/components/container.scss';
+@import '../../styles/components/title.scss';
 
 .form {
+  display: flex;
+  flex-wrap: wrap;
+
   &__inner {
     padding: 30px 45px;
     background-color: #fff;
@@ -54,11 +59,17 @@
 
   &__form {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 10px;
     margin-top: 38px;
-    padding: 0 0 0 75px;
     font-size: 12px;
     color: $color-gray-text;
+
+    @media (min-width: 1050px) {
+      justify-content: space-between;
+      padding: 0 0 0 75px;
+    }
   }
 
   &__first-part {
@@ -72,7 +83,11 @@
     display: flex;
     flex-direction: column;
     gap: 25px 0;
+    margin-top: 25px;
     // width: $width-part-form;
+    @media (min-width: 1050px) {
+      margin-top: 0;
+    }
   }
 
   &__item-wrap {
@@ -126,17 +141,4 @@
     font-size: 14px;
     color: $color-main;
   }
-}
-
-.container {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.title {
-  font-size: 46px;
-  font-weight: 900;
-  text-align: center;
-  color: $color-main;
 }

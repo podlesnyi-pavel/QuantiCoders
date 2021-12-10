@@ -2,11 +2,15 @@
 
 .help-menu {
   margin-top: 32px;
-  padding: 0 0 0 75px;
+  
+  @media (min-width: 1050px) {
+    padding: 0 0 0 75px;
+  }
 
   &__kind-help {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__item {
@@ -62,6 +66,7 @@
   &__payment {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 17px;
     padding: 12px;
     border: 1px solid $color-white-blue;
