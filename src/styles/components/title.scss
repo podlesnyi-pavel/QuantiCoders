@@ -1,6 +1,15 @@
 .title {
-  font-size: 46px;
+  font-size: 28px;
   font-weight: 900;
+  line-height: 1;
   text-align: center;
-  color: $color-main;
+  color: $color-main-dark;
+
+  @media (min-width: 576px) {
+    font-size: 39px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 46px;
+  }
 }

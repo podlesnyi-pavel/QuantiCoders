@@ -1,27 +1,39 @@
 @import '../../variables.scss';
 
 .help-menu {
-  margin-top: 32px;
-  
+  margin-top: 15px;
+
+  @media (min-width: 576px) {
+    margin-top: 32px;
+  }
+
   @media (min-width: 1050px) {
-    padding: 0 0 0 75px;
+    padding: 0 0 0 67px;
   }
 
   &__kind-help {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 5px 0;
+    padding: 0 12px;
+
+    @media (min-width: 768px) {
+      justify-content: space-between;
+    }
   }
 
   &__item {
     display: flex;
     align-items: center;
     gap: 10px;
+    width: 50%;
+    min-width: 191px;
     border: none;
     background-color: transparent;
     font-size: 15px;
     font-weight: 700;
-    color: $color-white-blue;
+    color: $color-main-dark-light;
 
     &:hover .help-menu__img,
     &:focus .help-menu__img,
@@ -40,7 +52,19 @@
     &:hover .help-menu__descr,
     &:focus .help-menu__descr,
     &:active .help-menu__descr {
-      color: $color-main;
+      color: $color-main-dark;
+    }
+
+    // &--active {
+    //   .help-menu__img 
+    // }
+    
+    @media (min-width: 576px) {
+      width: auto;
+    }
+
+    @media (min-width: 956px) {
+      min-width: auto;
     }
   }
 
@@ -50,7 +74,7 @@
     align-items: center;
     width: 65px;
     height: 65px;
-    border: 2px solid $color-white-blue;
+    border: 2px solid $color-main-dark-light;
     border-radius: $border-radius--bg;
     transition: background-color $transition-duration;
   }
@@ -60,42 +84,73 @@
     height: 40px;
     object-fit: contain;
     transition: fill $transition-duration;
-    fill: $color-white-blue;
+    fill: $color-main-dark-light;
   }
 
   &__payment {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 17px;
-    padding: 12px;
-    border: 1px solid $color-white-blue;
-    border-radius: $border-radius;
+    padding: 14px 10px 17px;
+    border: 1px solid $color-main-dark-light;
+    border-radius: $border-radius--bg;
     color: $color-gray-text;
+
+    @media (min-width: 576px) {
+      justify-content: space-between;
+      padding: 14px 16px 17px;
+    }
+
+    @media (min-width: 812px) {
+      flex-direction: row;
+    }
   }
 
   &__payment-methods {
-    flex-basis: 50%;
+    flex-basis: 100%;
+
+    @media (min-width: 980px) {
+      flex-basis: 60%;
+    }
   }
 
   &__payment-btns {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 4px;
+    gap: 10px;
+    margin-top: 10px;
+
+    @media (min-width: 576px) {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 15px;
+      margin-top: 4px;
+    }
   }
 
   &__text {
     font-size: 12px;
+    text-align: center;
+
+    @media (min-width: 812px) {
+      text-align: left;
+    }
   }
 
   &__payment-btn {
-    width: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 118px;
     height: 68px;
-    padding: 8px 5px;
+    padding: 12px 5px 8px;
     border: none;
     border-radius: $border-radius--bg;
-    background-color: $color-white-blue;
+    background-color: $color-main-dark-light;
     font-size: 11px;
     font-weight: 300;
     text-align: center;
@@ -106,6 +161,20 @@
     &:focus,
     &:active {
       background-color: $bgc-purple;
+    }
+
+    &--pt-10 {
+      padding-top: 10px;
+    }
+
+    @media (min-width: 576px) {
+      width: 137px;
+      height: 68px;
+      padding: 15px 5px 8px;
+
+      &--pt-10 {
+        padding-top: 10px;
+      }
     }
   }
 
@@ -118,17 +187,16 @@
     height: 20px;
     fill: $color-white;
 
-    &--height--30 {
+    &--avm {
       height: 30px;
     }
 
-    &--wm {
+    &--web-money {
       width: 75px;
     }
   }
 
   &__payment-descr {
-    margin-top: 15px;
 
     &--big {
       margin-top: 0;
@@ -136,16 +204,23 @@
       font-weight: 700;
       letter-spacing: -1px;
     }
+  }
 
-    &--m--sm {
-      margin-top: 5px;
+  &__card-info {
+    width: 100%;
+    margin-top: 15px;
+
+    @media (min-width: 980px) {
+      width: 305px;
+      margin-top: 0;
     }
   }
 
   &__card-info-card {
-    width: 320px;
+    margin: 6px auto 0;
+    max-width: 305px;
     height: 150px;
     border-radius: $border-radius--bg;
-    background-color: $color-white-blue;
+    background-color: $color-main-dark-light;
   }
 }
