@@ -36,28 +36,24 @@
     color: $color-main-dark-light;
 
     &:hover .help-menu__img,
-    &:focus .help-menu__img,
     &:active .help-menu__img {
       fill: $color-white;
     }
 
     &:hover .help-menu__img-wrap,
-    &:focus .help-menu__img-wrap,
     &:active .help-menu__img-wrap {
       border: 2px solid $bgc-purple;
       background-color: $bgc-purple;
-      transform: rotate(-10deg);
     }
 
     &:hover .help-menu__descr,
-    &:focus .help-menu__descr,
     &:active .help-menu__descr {
       color: $color-main-dark;
     }
 
-    // &--active {
-    //   .help-menu__img 
-    // }
+    &--active {
+      color: $color-main-dark;
+    }
     
     @media (min-width: 576px) {
       width: auto;
@@ -69,6 +65,7 @@
   }
 
   &__img-wrap {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,6 +74,29 @@
     border: 2px solid $color-main-dark-light;
     border-radius: $border-radius--bg;
     transition: background-color $transition-duration;
+
+    &--active {
+      border: 2px solid $bgc-purple;
+      background-color: $bgc-purple;
+
+      @media (min-width: 956px) {
+        &::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: -30px;
+          transform: translateX(-50%) rotate(225deg);
+          width: 17px;
+          height: 17px;
+          border-style: solid;
+          border: 1px solid $color-main-dark-light;
+          border-top-color: transparent;
+          border-left-color: transparent;
+          background-color: $color-white;
+          cursor: default;
+        }
+      }
+    }
   }
 
   &__img {
@@ -85,6 +105,10 @@
     object-fit: contain;
     transition: fill $transition-duration;
     fill: $color-main-dark-light;
+
+    &--active {
+      fill: $color-white;
+    }
   }
 
   &__payment {
@@ -158,13 +182,16 @@
     transition: background-color $transition-duration;
 
     &:hover,
-    &:focus,
     &:active {
       background-color: $bgc-purple;
     }
 
     &--pt-10 {
       padding-top: 10px;
+    }
+
+    &--active {
+      background-color: $bgc-purple;
     }
 
     @media (min-width: 576px) {
@@ -227,6 +254,7 @@
 
   &__card-number {
     display: flex;
+    justify-content: center;
     gap: 7px;
   }
 
@@ -235,6 +263,8 @@
     height: 35px;
     border: none;
     border-radius: $border-radius;
+    text-align: center;
+    color: $color-main-dark;
 
     &--width--105 {
       width: 105px;

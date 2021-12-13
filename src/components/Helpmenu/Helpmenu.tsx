@@ -1,14 +1,24 @@
 import { useState, useRef } from 'react';
+import classNames from 'classnames';
 import './helpmenu.scss';
 
 export const Helpmenu = () => {
   const [item, setItem] = useState('finance');
+  const [payment, setPayment] = useState('privat24');
 
-  const handlerChange = (type: string) => {
+  const handlerChangeItem = (type: string) => {
     setItem(type);
   };
 
-  const htmlElRef = useRef(null)
+  const [cardNumber1, setCardNumber1] = useState('');
+  const [cardNumber2, setCardNumber2] = useState('');
+  const [cardNumber3, setCardNumber3] = useState('');
+  const [cardNumber4, setCardNumber4] = useState('');
+
+    // const htmlElRef = useRef(null);
+
+    // console.log(htmlElRef.current.focus);
+
 
   // const UseFocus = () => {
   //   const htmlElRef = useRef(null)
@@ -17,20 +27,32 @@ export const Helpmenu = () => {
   //   return [ htmlElRef,  setFocus ] 
   // }
 
-  // const [input1Val, setInput1Val] = useState('')
   // const [input1Ref, setInput1Focus] = UseFocus()
 
-  // const [input2Val, setInput2Val] = useState('')
   // const [input2Ref, setInput2Focus] = UseFocus()
 
   return (
     <div className="help-menu">
       <div className="help-menu__kind-help">
-        <button className="help-menu__item">
-          <span className="help-menu__img-wrap">
+        <button
+          className={classNames(
+            "help-menu__item",
+            {"help-menu__item--active": item === 'do'}
+          )}
+          onClick={() => setItem('do')}
+        >
+          <span
+            className={classNames(
+              "help-menu__img-wrap",
+              {"help-menu__img-wrap--active": item === 'do'}
+            )}
+          >
             <svg
-              className="help-menu__img"
-              version="1.1"
+              // className="help-menu__img"
+              className={classNames(
+                "help-menu__img",
+                {"help-menu__img--active": item === 'do'}
+              )}
               xmlns="http://www.w3.org/2000/svg"  
               x="0px" y="0px"
               viewBox="0 0 485 485"
@@ -49,12 +71,21 @@ export const Helpmenu = () => {
         </button>
 
         <button
-          className="help-menu__item help-menu__item--active"
-          onClick={() => handlerChange('finance')}
+          className={classNames(
+            "help-menu__item",
+            {"help-menu__item--active": item === 'finance'}
+          )}
+          onClick={() => handlerChangeItem('finance')}
         >
-          <span className="help-menu__img-wrap">
+          <span className={classNames(
+             "help-menu__img-wrap",
+             {"help-menu__img-wrap--active": item === 'finance'}
+          )}>
           <svg
-            className="help-menu__img"
+            className={classNames(
+              "help-menu__img",
+              {"help-menu__img--active": item === 'finance'}
+            )}
             xmlns="http://www.w3.org/2000/svg"
             x="0px" y="0px"
             viewBox="0 0 512 512"
@@ -115,10 +146,22 @@ export const Helpmenu = () => {
           </span>
         </button>
 
-        <button className="help-menu__item">
-          <span className="help-menu__img-wrap">
+        <button
+          className={classNames(
+            "help-menu__item",
+            {"help-menu__item--active": item === 'material'}
+          )}
+          onClick={() => setItem('material')}
+        >
+          <span className={classNames(
+             "help-menu__img-wrap",
+             {"help-menu__img-wrap--active": item === 'material'}
+          )}>
             <svg
-              className="help-menu__img"
+              className={classNames(
+                "help-menu__img",
+                {"help-menu__img--active": item === 'material'}
+              )}
               xmlns="http://www.w3.org/2000/svg"
               x="0px" y="0px"
               viewBox="0 0 61.318 61.318"
@@ -152,10 +195,22 @@ export const Helpmenu = () => {
           </span>
         </button>
 
-        <button className="help-menu__item">
-          <span className="help-menu__img-wrap">
+        <button
+          className={classNames(
+            "help-menu__item",
+            {"help-menu__item--active": item === 'volunteering'}
+          )}
+          onClick={() => setItem('volunteering')}
+        >
+          <span className={classNames(
+             "help-menu__img-wrap",
+             {"help-menu__img-wrap--active": item === 'volunteering'}
+          )}>
             <svg 
-              className="help-menu__img"
+              className={classNames(
+                "help-menu__img",
+                {"help-menu__img--active": item === 'volunteering'}
+              )}
               xmlns="http://www.w3.org/2000/svg"
               x="0px" y="0px"
               viewBox="0 0 512 512"
@@ -180,14 +235,26 @@ export const Helpmenu = () => {
         </button>
       </div>
 
-      {item && (
+      {item !== 'finance' && (
+        <div className="help-menu__payment">
+          <h2>В разработке</h2>
+        </div>
+      )}
+
+      {item === 'finance' && (
         <div className="help-menu__payment">
           <div className="help-menu__payment-methods">
             <div className="help-menu__text">
               Спосiб оплати
             </div>
             <div className="help-menu__payment-btns">
-              <button className="help-menu__payment-btn">
+              <button
+                onClick={() => setPayment('card')}
+                className={classNames(
+                  "help-menu__payment-btn",
+                  {"help-menu__payment-btn--active": payment === 'card'}
+                )}
+              >
                 <span className="help-menu__payment-wrap-img">
                   <svg
                     className="help-menu__payment-img"
@@ -214,7 +281,13 @@ export const Helpmenu = () => {
                 </span>
               </button>
 
-              <button className="help-menu__payment-btn">
+              <button
+                onClick={() => setPayment('privat24')}
+                className={classNames(
+                  "help-menu__payment-btn",
+                  {"help-menu__payment-btn--active": payment === 'privat24'}
+                )}
+              >
                 <span className="help-menu__payment-descr help-menu__payment-descr--big">
                   Приват24
                 </span>
@@ -223,7 +296,14 @@ export const Helpmenu = () => {
                 </span>
               </button>
 
-              <button className="help-menu__payment-btn help-menu__payment-btn--pt-10">
+              <button
+                onClick={() => setPayment('awm')}
+                className={classNames(
+                  "help-menu__payment-btn",
+                  "help-menu__payment-btn--pt-10",
+                  {"help-menu__payment-btn--active": payment === 'awm'}
+                )}
+              >
                 <svg
                   className="help-menu__payment-img help-menu__payment-img--avm"
                   xmlns="http://www.w3.org/2000/svg"
@@ -250,7 +330,13 @@ export const Helpmenu = () => {
                 </span>
               </button>
 
-              <button className="help-menu__payment-btn">
+              <button
+                onClick={() => setPayment('webmoney')}
+                className={classNames(
+                  "help-menu__payment-btn",
+                  {"help-menu__payment-btn--active": payment === 'webmoney'}
+                )}
+              >
                 <svg
                   className="help-menu__payment-img help-menu__payment-img--web-money"
                   xmlns="http://www.w3.org/2000/svg"
@@ -264,7 +350,13 @@ export const Helpmenu = () => {
                 </span>
               </button>
 
-              <button className="help-menu__payment-btn">
+              <button
+                onClick={() => setPayment('paypal')}
+                className={classNames(
+                  "help-menu__payment-btn",
+                  {"help-menu__payment-btn--active": payment === 'paypal'}
+                )}
+              >
                 <svg
                   className="help-menu__payment-img help-menu__payment-img--height--30"
                   viewBox="0 0 256 302"
@@ -283,7 +375,8 @@ export const Helpmenu = () => {
             </div>
           </div>
 
-          <div className="help-menu__card-info">
+          {payment === 'privat24' && (
+            <div className="help-menu__card-info">
             <div className="help-menu__text">
               Введiть наступнi даннi
             </div>
@@ -296,9 +389,14 @@ export const Helpmenu = () => {
                 <input
                   type="text"
                   className="help-menu__card-field"
-                  // pattern = "[0-9]{2}"
-                  // maxLength="4"
-                  // value={input1Val}
+                  value={cardNumber1}
+
+                  onChange={(e) => {
+                    if (isFinite(Number(e.target.value)) && e.target.value.length <= 4) {
+                      setCardNumber1(e.target.value);
+                    }
+                    console.log(cardNumber1);
+                  }}
 
                   // onChange={(e)=>{
                   //   const val = e.target.value 
@@ -309,23 +407,20 @@ export const Helpmenu = () => {
                   // }}
                   // ref={input1Ref}
                 />
+
                 <input
                   type="text"
                   className="help-menu__card-field"
-                  // pattern = "[0-9]{4}"
-                  // maxLength="4"
                 />
+
                 <input
                   type="text"
                   className="help-menu__card-field"
-                  // pattern = "[0-9]{4}"
-                  // maxLength="4"
                 />
+
                 <input
                   type="text"
                   className="help-menu__card-field"
-                  // pattern = "[0-9]{4}"
-                  // maxLength="4"
                 />
               </div>
 
@@ -348,6 +443,7 @@ export const Helpmenu = () => {
               </div>
             </div>
           </div>
+          )}
         </div>
       )} 
     </div>
