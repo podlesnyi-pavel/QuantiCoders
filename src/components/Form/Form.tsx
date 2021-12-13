@@ -73,7 +73,7 @@ export const Form = () => {
               </div>
       
               <label
-                className="form__label"
+                className="form__label form__label--logo"
                 htmlFor="company"
               >
                 Назва компанii, организацii
@@ -181,7 +181,7 @@ export const Form = () => {
             action="#"
             method='POST'
           > 
-            <h2>В разработке)</h2>
+            <h2>В разработке</h2>
           </form>
         )}
   
