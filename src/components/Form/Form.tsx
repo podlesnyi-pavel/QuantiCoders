@@ -18,6 +18,7 @@ export const Form = () => (
       </div>
 
       <form
+      id="form"
         className="form__form"
         action="#"
         method='POST'
@@ -139,7 +140,13 @@ export const Form = () => (
 
       <Helpmenu />
 
-      <button className="form__submit" type="submit">Допомогти</button>
+      <button
+        className="form__submit"
+        type="submit"
+        form="form"
+      >
+        Допомогти
+      </button>
     </div>
   </div>
 );

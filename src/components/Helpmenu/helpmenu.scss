@@ -197,7 +197,6 @@
   }
 
   &__payment-descr {
-
     &--big {
       margin-top: 0;
       font-size: 16px;
@@ -209,6 +208,8 @@
   &__card-info {
     width: 100%;
     margin-top: 15px;
+    font-size: 12px;
+    color: $color-white;
 
     @media (min-width: 980px) {
       width: 305px;
@@ -216,11 +217,37 @@
     }
   }
 
-  &__card-info-card {
+  &__card-card {
     margin: 6px auto 0;
     max-width: 305px;
-    height: 150px;
+    padding: 16px 18px;
     border-radius: $border-radius--bg;
     background-color: $color-main-dark-light;
   }
+
+  &__card-number {
+    display: flex;
+    gap: 7px;
+  }
+
+  &__card-field {
+    width: 61px;
+    height: 35px;
+    border: none;
+    border-radius: $border-radius;
+
+    &--width--105 {
+      width: 105px;
+    }
+  }
+
+  &__card-down-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  &__card-cvv {
+    text-transform: uppercase;
+  } 
 }
