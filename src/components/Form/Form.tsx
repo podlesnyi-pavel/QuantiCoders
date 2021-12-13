@@ -5,6 +5,8 @@ import './form.scss';
 
 export const Form = () => {
   const [typeForm, setTypeForm] = useState('individual');
+  const [phone, setPhone] = useState('');
+  const [index, setIndex] = useState('');
 
   return (
     <div className="form">
@@ -105,6 +107,12 @@ export const Form = () => {
                     type="tel"
                     name="number"
                     id="number"
+                    value={phone}
+                    onChange={(e) => {
+                      if (isFinite(Number(e.target.value)) || e.target.value === '+') {
+                        setPhone(e.target.value);
+                      }
+                    }}
                   />
                 </label>
             </div>
@@ -149,7 +157,18 @@ export const Form = () => {
                 htmlFor="index"
               >
                 Поштовий iндекс
-                <input className="form__input form__input--sm" type="text" name="index" id="index" />
+                <input
+                  className="form__input form__input--sm"
+                  type="text"
+                  name="index"
+                  id="index"
+                  value={index}
+                  onChange={(e) => {
+                    if (isFinite(Number(e.target.value))) {
+                      setIndex(e.target.value);
+                    }
+                  }}
+                />
               </label>
             </div>
           </form>
