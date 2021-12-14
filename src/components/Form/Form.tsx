@@ -50,7 +50,19 @@ export const Form = () => {
             className="form__form"
             action="#"
             method='POST'
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => {
+              e.preventDefault()
+              setName('')
+              setSurname('')
+              setCompany('')
+              setEmail('')
+              setPhone('')
+              setCountry('')
+              setCity('')
+              setState('')
+              setAddress('')
+              setIndex('')
+            }}
           > 
             <div className='form__part'>
               <div className="form__item-wrap">
@@ -126,6 +138,8 @@ export const Form = () => {
                     type="tel"
                     name="number"
                     id="number"
+                    maxLength={12}
+                    placeholder="+380 00 000 00 00"
                     value={phone}
                     onChange={(e) => {
                       if (isFinite(Number(e.target.value)) || e.target.value === '+') {
@@ -241,18 +255,6 @@ export const Form = () => {
           className="form__submit"
           type="submit"
           form="form"
-          onClick={() => {
-            setName('')
-            setSurname('')
-            setCompany('')
-            setEmail('')
-            setPhone('')
-            setCountry('')
-            setCity('')
-            setState('')
-            setAddress('')
-            setIndex('')
-          }}
         >
           Допомогти
         </button>
