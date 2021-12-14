@@ -138,7 +138,7 @@ export const Form = () => {
                     type="tel"
                     name="number"
                     id="number"
-                    maxLength={12}
+                    maxLength={13}
                     placeholder="+380 00 000 00 00"
                     value={phone}
                     onChange={(e) => {
