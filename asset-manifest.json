@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/QuantiCoders/static/css/main.e4ccb19d.chunk.css",
-    "main.js": "/QuantiCoders/static/js/main.2f7acee4.chunk.js",
-    "main.js.map": "/QuantiCoders/static/js/main.2f7acee4.chunk.js.map",
+    "main.js": "/QuantiCoders/static/js/main.9007c4a7.chunk.js",
+    "main.js.map": "/QuantiCoders/static/js/main.9007c4a7.chunk.js.map",
     "runtime-main.js": "/QuantiCoders/static/js/runtime-main.b025824b.js",
     "runtime-main.js.map": "/QuantiCoders/static/js/runtime-main.b025824b.js.map",
     "static/js/2.8ad7d810.chunk.js": "/QuantiCoders/static/js/2.8ad7d810.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.b025824b.js",
     "static/js/2.8ad7d810.chunk.js",
     "static/css/main.e4ccb19d.chunk.css",
-    "static/js/main.2f7acee4.chunk.js"
+    "static/js/main.9007c4a7.chunk.js"
   ]
 }
