@@ -258,6 +258,52 @@
     gap: 7px;
   }
 
+  &__wrapper-field {
+    position: relative;
+    display: flex;
+    gap: 5px;
+    width: 105px;
+    border-radius: $border-radius--bg;
+    background-color: $color-white;
+    
+    &:after {
+      content: '/';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 19px;
+      color: #000;
+      visibility: hidden;
+    }
+
+    &--after--visible {
+      &::after {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__field {
+    width: 50%;
+    height: 35px;
+    border: none;
+    outline: none;
+    color: $color-main-dark;
+    
+
+    &--left {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      text-align: right;
+    }
+
+    &--right {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    } 
+  }
+
   &__card-field {
     width: 61px;
     height: 35px;

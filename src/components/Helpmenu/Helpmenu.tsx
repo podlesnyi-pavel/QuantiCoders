@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, MutableRefObject } from 'react';
+import { useState, useRef, MutableRefObject } from 'react';
 import classNames from 'classnames';
 import './helpmenu.scss';
 
@@ -6,17 +6,14 @@ export const Helpmenu = () => {
   const [item, setItem] = useState('finance');
   const [payment, setPayment] = useState('privat24');
 
-  const useMountEffect = (fun: () => void) => useEffect(fun, []);
-
   const UseFocus = (): [MutableRefObject<HTMLInputElement | null>, () => void] => {
     const htmlElRef = useRef<HTMLInputElement | null>(null)
     const setFocus = () => {htmlElRef.current && htmlElRef.current.focus()}
   
-    return [ htmlElRef,  setFocus ];
+    return [htmlElRef,  setFocus];
   }
 
   const [cardNumber1, setCardNumber1] = useState('');
-  const [cardNumber1Ref, setCardNumber1Focus] = UseFocus();
 
   const [cardNumber2, setCardNumber2] = useState('');
   const [cardNumber2Ref, setCardNumber2Focus] = UseFocus();
@@ -27,13 +24,14 @@ export const Helpmenu = () => {
   const [cardNumber4, setCardNumber4] = useState('');
   const [cardNumber4Ref, setCardNumber4Focus] = UseFocus();
 
-  const [validity, setValidity] = useState('');
-  const [validityRef, setValidityFocus] = UseFocus();
+  const [validity1, setValidity1] = useState('');
+  const [validity1Ref, setValidity1Focus] = UseFocus();
+
+  const [validity2, setValidity2] = useState('');
+  const [validity2Ref, setValidity2Focus] = UseFocus();
 
   const [cvv, setCvv] = useState('');
   const [cvvRef, setCvvFocus] = UseFocus();
-
-  useMountEffect( setCardNumber1Focus );
 
   return (
     <div className="help-menu">
@@ -395,7 +393,7 @@ export const Helpmenu = () => {
                   className="help-menu__card-field"
                   value={cardNumber1}
 
-                  onChange={(e)=>{
+                  onChange={(e) => {
                     const val = e.target.value 
 
                     if (val.length <= 4 && isFinite(Number(val)) && !val.includes(' ')) {
@@ -406,14 +404,13 @@ export const Helpmenu = () => {
                       setCardNumber2Focus()
                     }
                   }}
-                  ref={cardNumber1Ref}
                 />
 
                 <input
                   type="text"
                   className="help-menu__card-field"
                   value={cardNumber2}
-                  onChange={(e)=>{
+                  onChange={(e) => {
                     const val = e.target.value 
 
                     if (val.length <= 4 && isFinite(Number(val)) && !val.includes(' ')) {
@@ -432,7 +429,7 @@ export const Helpmenu = () => {
                   className="help-menu__card-field"
                   value={cardNumber3}
 
-                  onChange={(e)=>{
+                  onChange={(e) => {
                     const val = e.target.value 
 
                     if (val.length <= 4 && isFinite(Number(val)) && !val.includes(' ')) {
@@ -450,7 +447,7 @@ export const Helpmenu = () => {
                   type="text"
                   className="help-menu__card-field"
                   value={cardNumber4}
-                  onChange={(e)=>{
+                  onChange={(e) => {
                     const val = e.target.value 
 
                     if (val.length <= 4 && isFinite(Number(val)) && !val.includes(' ')) {
@@ -458,7 +455,7 @@ export const Helpmenu = () => {
                     }
 
                     if (val.length === 4) {
-                      setValidityFocus()
+                      setValidity1Focus()
                     }
                   }}
                   ref={cardNumber4Ref}
@@ -471,23 +468,58 @@ export const Helpmenu = () => {
                     Термiн дii
                   </div>
 
-                  <input
-                    type="text"
-                    className="help-menu__card-field help-menu__card-field--width--105"
-                    value={validity}
-                    onChange={(e)=>{
-                      const val = e.target.value 
-  
-                      if (val.length <= 5 && isFinite(Number(val)) && !val.includes(' ')) {
-                        setValidity(val);
-                      }
-  
-                      if (val.length === 5) {
-                        setCvvFocus()
-                      }
-                    }}
-                    ref={validityRef}
-                  />
+                  <div className={classNames(
+                    "help-menu__wrapper-field",
+                    {"help-menu__wrapper-field--after--visible": validity1.length === 2}
+                  )}>
+                    <input
+                      className="help-menu__field help-menu__field--left"
+                      autoComplete="off"
+                      id="month"
+                      pattern="[0-9]*"
+                      type="text"
+                      data-pattern-validate
+                      value={validity1}
+                      onChange={(e) => {
+                        const val = e.target.value 
+    
+                        if (val.length <= 2
+                          && isFinite(Number(val))
+                          && !val.includes(' ')
+                          && (Number(val[0]) === 0 || Number(val[0]) === 1)) {
+                          setValidity1(val);
+                        }
+    
+                        if (val.length === 2) {
+                          setValidity2Focus()
+                        }
+                      }}
+                      ref={validity1Ref}
+                    />
+                    <input
+                      className="help-menu__field help-menu__field--right"
+                      autoComplete="off"
+                      id="year"
+                      pattern="[0-9]*"
+                      type="text"
+                      data-pattern-validate
+                      value={validity2}
+                      onChange={(e) => {
+                        const val = e.target.value 
+    
+                        if (val.length <= 2
+                          && isFinite(Number(val))
+                          && !val.includes(' ')) {
+                          setValidity2(val);
+                        }
+    
+                        if (validity2.length === 2) {
+                          setCvvFocus()
+                        }
+                      }}
+                      ref={validity2Ref}
+                    />
+                  </div>
                 </div>
 
                 <div className="help-menu__card-cvv">

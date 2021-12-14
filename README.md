@@ -1,7 +1,7 @@
 # Добре серце
 
-[Task](https://docs.google.com/document/d/1xCX6O5gRzwuPJXFYdA5FAbmWMOjaDjjuoFeLmnWqLEc/edit)
-[DEMO](https://podlesnyi-pavel.github.io/QuantiCoders/)
+- [Task](https://docs.google.com/document/d/1xCX6O5gRzwuPJXFYdA5FAbmWMOjaDjjuoFeLmnWqLEc/edit)
+- [DEMO](https://podlesnyi-pavel.github.io/QuantiCoders/)
 
 - HTML
 - SCSS

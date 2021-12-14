@@ -5,7 +5,15 @@ import './form.scss';
 
 export const Form = () => {
   const [typeForm, setTypeForm] = useState('individual');
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [company, setCompany] = useState('');
+  const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [country, setCountry] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [address, setAddress] = useState('');
   const [index, setIndex] = useState('');
 
   return (
@@ -56,6 +64,9 @@ export const Form = () => {
                     type="text"
                     name="name"
                     id="name"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </label>
                 <label
@@ -68,6 +79,9 @@ export const Form = () => {
                     type="text"
                     name="surname"
                     id="surname"
+                    required
+                    value={surname}
+                    onChange={(e) => setSurname(e.target.value)}
                   />
                 </label>
               </div>
@@ -82,6 +96,8 @@ export const Form = () => {
                   type="text"
                   name="company"
                   id="company"
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
                 />
               </label>
       
@@ -94,6 +110,9 @@ export const Form = () => {
                     type="email"
                     name="email"
                     id="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </label>
       
@@ -123,7 +142,14 @@ export const Form = () => {
                 htmlFor="country"
               >
                 Краiна
-                <input className="form__input" type="text" name="country" id="country" />
+                <input
+                  className="form__input"
+                  type="text"
+                  name="country"
+                  id="country"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                />
               </label>
     
               <div className="form__item-wrap">
@@ -132,7 +158,14 @@ export const Form = () => {
                   htmlFor="city"
                 >
                   Мiсто
-                  <input className="form__input" type="text" name="city" id="city" />
+                  <input
+                    className="form__input"
+                    type="text"
+                    name="city"
+                    id="city"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                  />
                 </label>
     
                 <label
@@ -140,7 +173,14 @@ export const Form = () => {
                   htmlFor="state"
                 >
                   Штат, район
-                  <input className="form__input" type="tel" name="state" id="state" />
+                  <input
+                    className="form__input"
+                    type="tel"
+                    name="state"
+                    id="state"
+                    value={state}
+                    onChange={(e) => setState(e.target.value)}
+                  />
                 </label>
               </div>
     
@@ -149,7 +189,14 @@ export const Form = () => {
                 htmlFor="address"
               >
                 Адреса
-                <input className="form__input" type="text" name="address" id="address" />
+                <input
+                  className="form__input"
+                  type="text"
+                  name="address"
+                  id="address"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                />
               </label>
   
               <label
@@ -194,6 +241,18 @@ export const Form = () => {
           className="form__submit"
           type="submit"
           form="form"
+          onClick={() => {
+            setName('')
+            setSurname('')
+            setCompany('')
+            setEmail('')
+            setPhone('')
+            setCountry('')
+            setCity('')
+            setState('')
+            setAddress('')
+            setIndex('')
+          }}
         >
           Допомогти
         </button>
