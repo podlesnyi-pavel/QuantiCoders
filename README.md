@@ -1,6 +1,6 @@
-Task: 
-[TT](https://docs.google.com/document/d/1xCX6O5gRzwuPJXFYdA5FAbmWMOjaDjjuoFeLmnWqLEc/edit)
+# Добре серце
 
+[Task](https://docs.google.com/document/d/1xCX6O5gRzwuPJXFYdA5FAbmWMOjaDjjuoFeLmnWqLEc/edit)
 [DEMO](https://podlesnyi-pavel.github.io/QuantiCoders/)
 
 - HTML
@@ -13,8 +13,8 @@ Task:
 **Local development**
 
 Dependencies
-- Node v12.16.3 and higher
-- NPM v6.14.4 and higher
+- Node v16.13.0 and higher
+- NPM v8.1.0 and higher
 
 Installing
 - Fork and clone this repository
