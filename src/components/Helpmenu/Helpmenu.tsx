@@ -1,33 +1,39 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, MutableRefObject } from 'react';
 import classNames from 'classnames';
 import './helpmenu.scss';
 
 export const Helpmenu = () => {
   const [item, setItem] = useState('finance');
   const [payment, setPayment] = useState('privat24');
-  const [validity, setValidity] = useState('');
-  const [cvv, setCvv] = useState('');
 
-  // const UseFocus = () => {
-  //   const htmlElRef = useRef(null)
-  //   const setFocus = () => {htmlElRef.current && htmlElRef.current.focus()}
+  const useMountEffect = (fun: () => void) => useEffect(fun, []);
+
+  const UseFocus = (): [MutableRefObject<HTMLInputElement | null>, () => void] => {
+    const htmlElRef = useRef<HTMLInputElement | null>(null)
+    const setFocus = () => {htmlElRef.current && htmlElRef.current.focus()}
   
-  //   return [ htmlElRef,  setFocus ];
-  // }
+    return [ htmlElRef,  setFocus ];
+  }
 
   const [cardNumber1, setCardNumber1] = useState('');
-  // const [cardNumber1Ref, setCardNumber1Focus] = UseFocus();
+  const [cardNumber1Ref, setCardNumber1Focus] = UseFocus();
 
-  // const [cardNumber2, setCardNumber2] = useState('');
-  // const [cardNumber2Ref, setCardNumber2Focus] = UseFocus();
+  const [cardNumber2, setCardNumber2] = useState('');
+  const [cardNumber2Ref, setCardNumber2Focus] = UseFocus();
 
-  // const [cardNumber3, setCardNumber3] = useState('');
-  // const [cardNumber3Ref, setCardNumber3Focus] = UseFocus();
+  const [cardNumber3, setCardNumber3] = useState('');
+  const [cardNumber3Ref, setCardNumber3Focus] = UseFocus();
 
-  // const [cardNumber4, setCardNumber4] = useState('');
-  // const [cardNumber4Ref, setCardNumber4Focus] = UseFocus();
+  const [cardNumber4, setCardNumber4] = useState('');
+  const [cardNumber4Ref, setCardNumber4Focus] = UseFocus();
 
-  // useEffect( setCardNumber1Focus );
+  const [validity, setValidity] = useState('');
+  const [validityRef, setValidityFocus] = UseFocus();
+
+  const [cvv, setCvv] = useState('');
+  const [cvvRef, setCvvFocus] = UseFocus();
+
+  useMountEffect( setCardNumber1Focus );
 
   return (
     <div className="help-menu">
@@ -389,35 +395,73 @@ export const Helpmenu = () => {
                   className="help-menu__card-field"
                   value={cardNumber1}
 
-                  onChange={(e) => {
-                    if (isFinite(Number(e.target.value)) && e.target.value.length <= 4) {
-                      setCardNumber1(e.target.value);
+                  onChange={(e)=>{
+                    const val = e.target.value 
+
+                    if (val.length <= 4 && isFinite(Number(val)) && !val.includes(' ')) {
+                      setCardNumber1(val);
+                    }
+
+                    if (val.length === 4) {
+                      setCardNumber2Focus()
                     }
                   }}
-
-                  // onChange={(e)=>{
-                  //   const val = e.target.value 
-                  //   setCardNumber1(val)
-                  //   if (val.length===1) {
-                  //     setCardNumber2Focus()
-                  //   }
-                  // }}
-                  // ref={cardNumber1Ref}
+                  ref={cardNumber1Ref}
                 />
 
                 <input
                   type="text"
                   className="help-menu__card-field"
+                  value={cardNumber2}
+                  onChange={(e)=>{
+                    const val = e.target.value 
+
+                    if (val.length <= 4 && isFinite(Number(val)) && !val.includes(' ')) {
+                      setCardNumber2(val);
+                    }
+
+                    if (val.length === 4) {
+                      setCardNumber3Focus()
+                    }
+                  }}
+                  ref={cardNumber2Ref}
                 />
 
                 <input
                   type="text"
                   className="help-menu__card-field"
+                  value={cardNumber3}
+
+                  onChange={(e)=>{
+                    const val = e.target.value 
+
+                    if (val.length <= 4 && isFinite(Number(val)) && !val.includes(' ')) {
+                      setCardNumber3(val);
+                    }
+
+                    if (val.length === 4) {
+                      setCardNumber4Focus()
+                    }
+                  }}
+                  ref={cardNumber3Ref}
                 />
 
                 <input
                   type="text"
                   className="help-menu__card-field"
+                  value={cardNumber4}
+                  onChange={(e)=>{
+                    const val = e.target.value 
+
+                    if (val.length <= 4 && isFinite(Number(val)) && !val.includes(' ')) {
+                      setCardNumber4(val);
+                    }
+
+                    if (val.length === 4) {
+                      setValidityFocus()
+                    }
+                  }}
+                  ref={cardNumber4Ref}
                 />
               </div>
 
@@ -431,11 +475,18 @@ export const Helpmenu = () => {
                     type="text"
                     className="help-menu__card-field help-menu__card-field--width--105"
                     value={validity}
-                    onChange={(e) => {
-                      if (isFinite(Number(e.target.value))) {
-                        setValidity(e.target.value);
+                    onChange={(e)=>{
+                      const val = e.target.value 
+  
+                      if (val.length <= 5 && isFinite(Number(val)) && !val.includes(' ')) {
+                        setValidity(val);
+                      }
+  
+                      if (val.length === 5) {
+                        setCvvFocus()
                       }
                     }}
+                    ref={validityRef}
                   />
                 </div>
 
@@ -449,10 +500,13 @@ export const Helpmenu = () => {
                     className="help-menu__card-field help-menu__card-field--width--105"
                     value={cvv}
                     onChange={(e) => {
-                      if (isFinite(Number(e.target.value))) {
+                      const val = e.target.value 
+
+                      if (isFinite(Number(e.target.value)) && e.target.value.length <= 3 && !val.includes(' ')) {
                         setCvv(e.target.value);
                       }
                     }}
+                    ref={cvvRef}
                   />
                 </div>
               </div>
