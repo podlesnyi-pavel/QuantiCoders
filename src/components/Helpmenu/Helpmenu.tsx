@@ -497,7 +497,11 @@ export const Helpmenu = () => {
                       ref={validity1Ref}
                     />
                     <input
-                      className="help-menu__field help-menu__field--right"
+                      className={classNames(
+                        "help-menu__field",
+                        "help-menu__field--right",
+                        {"help-menu__field--right--active": validity1.length}
+                      )}
                       autoComplete="off"
                       id="year"
                       pattern="[0-9]*"

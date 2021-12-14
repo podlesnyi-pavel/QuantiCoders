@@ -301,6 +301,11 @@
     &--right {
       border-top-right-radius: $border-radius;
       border-bottom-right-radius: $border-radius;
+      pointer-events: none;
+
+      &--active {
+        pointer-events: auto;
+      }
     } 
   }
 
